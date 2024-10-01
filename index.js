@@ -1,10 +1,11 @@
-const store = require('./app/store')
-const cakeAction = require('./features/Cake/CakeSlice').cakeActions
-const fetchUser = require('./features/User/User').fetchUser
-const iceCreamAction = require('./features/Ice_Cream/IceCream').iceCreamActions
+const store = require("./app/store");
+const cakeAction = require("./features/Cake/CakeSlice").cakeActions;
+const cakeSlice = require("./features/Cake/CakeSlice");
+const fetchUser = require("./features/User/User").fetchUser;
+const iceCreamAction = require("./features/Ice_Cream/IceCream").iceCreamActions;
 console.log("initial State ", store.getState());
 store.subscribe(() => {
-    console.log("Updated State ", store.getState());
+  console.log("Updated State ", store.getState());
 });
 store.dispatch(cakeAction.ordered());
 store.dispatch(iceCreamAction.ordered());
